@@ -1,0 +1,22 @@
+{
+  "name": "btb",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/arthas168/btb-travel.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/arthas168/btb-travel/issues"
+  },
+  "homepage": "https://github.com/arthas168/btb-travel#readme",
+  "dependencies": {
+    "gh-pages": "^3.1.0"
+  }
+}
