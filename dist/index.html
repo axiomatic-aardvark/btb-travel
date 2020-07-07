@@ -11,6 +11,8 @@
     crossorigin="anonymous">
   <link rel="stylesheet" href="css/style.css">
   <title>Balkan Travel Bulgaria</title>
+  <meta name="description" content="Вземи своя билет за пътуване из Европа с влак - Франция, Испания и Италия! Buy your ticket for a trip around Europe - France, Span and Italy!"> 
+  <meta name="keywords" content="tickets билети europe европа train влак france  франция spain испания italy италия travel пътуване">
 </head>
 
 <body data-spy="scroll" data-target="#main-nav" >
@@ -284,12 +286,12 @@
         <div class="col-md-6">
           <div class="card card-form mt-4 rounded 5px">
             <div class="card-body">
-                <form>
+                <form id="form-email">
                     <div class="form header">
                         <h4 class="text-light py-2">Форма за контакт</h4>
                     </div>
                     <div class="form-group">
-                      <input type="text" class="form-control form-control-md" placeholder="Имена">
+                      <input id="#names" type="text" class="form-control form-control-md" placeholder="Имена">
                     </div>
                     <div class="form-group">
                         <input type="email" class="form-control form-control-md" placeholder="Еmail">
@@ -307,7 +309,7 @@
                             </div>
                     </div>
                     </div>
-                    <input type="text" value="Изпрати" class="btn btn-outline-light m-3">
+                    <input type="submit" value="Изпрати" class="btn btn-outline-light m-3">
                 </form>
             </div>
           </div>
@@ -343,7 +345,14 @@
   <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.min.js" integrity="sha384-smHYKdLADwkXOn1EmN1qk/HfnUcbVRZyYmZ4qpPea6sjB/pTJ0euyQp0Mk8ck+5T"
     crossorigin="anonymous"></script>
 
+
+     <!-- Email service -->
+    <script src="https://smtpjs.com/v3/smtp.js"></script> 
+
+    <!-- Alerts -->
+    <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
   <script>
+
 
 // Plugin @RokoCB :: Return the visible amount of px
 // of any element currently in viewport.
@@ -422,6 +431,50 @@ $(".little-train").inViewport(function(px){
         });
       }
     });
+
+    
+
+    $('#form-email').submit((e) => {
+      e.preventDefault();
+    // get all the inputs into an array.
+    const inputs = $('#form-email :input');
+
+   const names = inputs[0].value;
+   const email = inputs[1].value;
+   const phone = inputs[2].value;
+   const message = inputs[3].value;
+   const isChecked = inputs[4];
+
+    if(names==='' || email==='' || message==='' || phone==='' || !isChecked.checked){
+      swal("Грешка!", "Не сте попълнили всички полета.", "error");
+    }else{
+        sendEmail(names, email, message,phone);
+
+        inputs[0].value ='';
+        inputs[1].value ='';
+        inputs[2].value ='';
+        inputs[3].value ='';
+        inputs[4].checked = false;
+    }
+});
+
+  function sendEmail(names, email, message, phone) {
+	Email.send({
+	Host: "smtp.gmail.com",
+	Username : "btbemailservice@gmail.com",
+	Password : "btb123456",
+	To : 'hasho62@abv.bg',
+	From : email,
+	Subject : "Съобщение от форма за контакт",
+  Body : `Съобщение от ${names}(${email}): ${message}
+  Телефон за връзка: ${phone}`,
+	}).then(
+    swal("Готово!", "Вашето съобщение беше изпратено успешно.", "success")
+
+	);
+}
+   
+
   </script>
 </body>
 
