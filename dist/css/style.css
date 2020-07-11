@@ -6,7 +6,7 @@ body {
 /* NAVBAR */
 
 .navbar {
-  background-color: #f50606fa;
+  background-color: #15026b;
   border-bottom: rgb(238, 234, 6) 3px solid;
 }
 .navbar-brand {
@@ -50,13 +50,13 @@ body {
 
 /* HOME-SECTION */
 #home {
-  background-image: url(../img/eur9.png);
+  background-image: url(../img/trainnew.png);
   background-repeat: no-repeat;
   background-size: cover;
   background-position: center;
   opacity: 0.6;
   border-bottom: rgb(117, 121, 119) 3px solid;
-  min-height: 750px;
+  min-height: 740px;
 }
 
 #home .container {
@@ -76,8 +76,10 @@ body {
   padding-top: 15px;
 }
 
-.travel, .portal-title {
-  color: #f50606fa;
+.travel,
+.portal-title {
+  color: #fff;
+  font-weight: 300;
   /* color: #15026b; */
 }
 
@@ -123,7 +125,7 @@ body {
 /* DESTINATIONS-SECTION */
 
 #destinations-section {
-  min-height: 700px;
+  min-height: 740px;
   border-bottom: rgb(117, 121, 119) 3px solid;
 }
 
@@ -161,7 +163,7 @@ body {
 
 #about-section {
   background-color: #e4e7f8;
-  min-height: 700px;
+  min-height: 740px;
   padding-top: 20px;
   border-bottom: rgb(117, 121, 119) 3px solid;
 }
@@ -208,7 +210,7 @@ body {
 /* CONTACTS-SECTION */
 
 #contacts-section {
-  min-height: 700px;
+  min-height: 740px;
 }
 
 #contacts-section .fas {
@@ -237,23 +239,23 @@ h5 {
   font-size: 14px;
 }
 
-h2{
-color: #f50606fa;
-font-family: "Franklin Gothic Heavy";
-font-size: 2em;
-margin: 10px 0 0 10px;
-white-space: nowrap;
-overflow: hidden;
-width: 100%;
-animation: animtext infinite;
-animation-duration: 5s;
-transition: all cubic-bezier(0.1, 0.7, 1.0, 0.1);
+h2 {
+  color: #f50606fa;
+  font-family: "Franklin Gothic Heavy";
+  font-size: 2em;
+  margin: 10px 0 0 10px;
+  white-space: nowrap;
+  overflow: hidden;
+  width: 100%;
+  animation: animtext infinite;
+  animation-duration: 5s;
+  transition: all cubic-bezier(0.1, 0.7, 1, 0.1);
 }
-@keyframes animtext { 
-from {
-  width: 0;
-  transition: all 2s ease-in-out;
-} 
+@keyframes animtext {
+  from {
+    width: 0;
+    transition: all 2s ease-in-out;
+  }
 }
 
 /* POLICY-SECTION */
