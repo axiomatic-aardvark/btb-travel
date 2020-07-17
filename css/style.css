@@ -60,6 +60,12 @@ body {
   min-height: 740px;
 }
 
+@media screen and (max-width: 450px) {
+  #home {
+    background-position: 54% 38%;
+  }
+}
+
 #home .container {
   padding-top: 80px;
 }
@@ -77,7 +83,8 @@ body {
   padding-top: 15px;
 }
 
-.travel, .portal-title {
+.travel,
+.portal-title {
   color: #fff;
   font-weight: 400;
   letter-spacing: 2px;
@@ -240,23 +247,23 @@ h5 {
   font-size: 14px;
 }
 
-h2{
-color: #f50606fa;
-font-family: "Franklin Gothic Heavy";
-font-size: 2em;
-margin: 10px 0 0 10px;
-white-space: nowrap;
-overflow: hidden;
-width: 100%;
-animation: animtext infinite;
-animation-duration: 5s;
-transition: all cubic-bezier(0.1, 0.7, 1.0, 0.1);
+h2 {
+  color: #f50606fa;
+  font-family: "Franklin Gothic Heavy";
+  font-size: 2em;
+  margin: 10px 0 0 10px;
+  white-space: nowrap;
+  overflow: hidden;
+  width: 100%;
+  animation: animtext infinite;
+  animation-duration: 5s;
+  transition: all cubic-bezier(0.1, 0.7, 1, 0.1);
 }
-@keyframes animtext { 
-from {
-  width: 0;
-  transition: all 2s ease-in-out;
-} 
+@keyframes animtext {
+  from {
+    width: 0;
+    transition: all 2s ease-in-out;
+  }
 }
 
 /* POLICY-SECTION */
