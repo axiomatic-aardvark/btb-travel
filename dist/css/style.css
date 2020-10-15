@@ -355,3 +355,7 @@ footer {
     right: 7.5rem;
   }
 }
+
+.hidden{
+  display: none;
+}
