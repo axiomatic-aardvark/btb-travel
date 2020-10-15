@@ -25,6 +25,9 @@
       <button class="navbar-toggler" data-toggle="collapse" data-target="#navbarCollapse">
         <span class="navbar-toggler-icon"></span>
       </button>
+      <button type="button" class="close close-menu-btn hidden" aria-label="Close" data-toggle="collapse" data-target="#navbarCollapse">
+        <span aria-hidden="true">&times;</span>
+      </button>
       <div class="collapse navbar-collapse" id="navbarCollapse">
         <ul class="navbar-nav ml-auto">
             <li class="nav-item">
@@ -397,6 +400,18 @@ $(".portal-title").inViewport(function(px){
     }
 });
 
+// //for show/hide menu close button trigger
+// $("trigger-show-hide-close-menu-button").inViewport(function(px){
+//     // if(px) {$(this).addClass("animation-entrance")} ;
+//     if(px) {
+//       $(".close-menu-btn").removeClass("hidden")
+//       // $(this).addClass("focus-in-expand")
+//     }else{
+//       $(".close-menu-btn").addClass("hidden")
+//       // $(this).removeClass("focus-in-expand")
+//     }
+// });
+
 //for little red train animation trigger
 $(".little-train").inViewport(function(px){
     // if(px) {$(this).addClass("animation-entrance")} ;
@@ -418,6 +433,49 @@ $(".little-train").inViewport(function(px){
 
     // Smooth Scrolling
     $("#main-nav a").on('click', function (event) {
+      if (this.hash !== "") {
+        event.preventDefault();
+
+        const hash = this.hash;
+
+        $('html, body').animate({
+          scrollTop: $(hash).offset().top
+        }, 800, function () {
+
+          window.location.hash = hash;
+        });
+      }
+    });
+
+    
+
+    // Smooth Scrolling
+    $(".navbar-toggler").on('click', function (event) {
+      console.log("wtf")
+      //close-menu-btn
+      if($(".close-menu-btn").hasClass("hidden")){
+        $(".close-menu-btn").removeClass("hidden")
+      }else{
+        $(".close-menu-btn").addClass("hidden")
+      }
+     
+    });
+
+    $(".close-menu-btn").on('click', function (event) {
+      console.log("wtf")
+      //close-menu-btn
+      if($(".close-menu-btn").hasClass("hidden")){
+        $(".close-menu-btn").removeClass("hidden")
+      }else{
+        $(".close-menu-btn").addClass("hidden")
+      }
+     
+    });
+
+
+
+     // Smooth Scrolling
+     $("#main-nav a").on('click', function (event) {
       if (this.hash !== "") {
         event.preventDefault();
 
