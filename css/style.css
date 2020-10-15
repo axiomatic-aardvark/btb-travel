@@ -356,6 +356,6 @@ footer {
   }
 }
 
-.hidden{
+#close-menu.hidden{
   display: none;
 }
